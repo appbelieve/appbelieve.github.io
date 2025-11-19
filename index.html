@@ -1,143 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AppBelieve Studio</title>
-  <style>
-    /* ===== RESET ===== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; background-color: #f9f9f9; }
-    a { color: #1a73e8; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AppBelieve Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Reset cơ bản */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    /* ===== HEADER ===== */
-    header {
-      background-color: #1a73e8;
-      color: white;
-      padding: 60px 20px 40px 20px;
-      text-align: center;
-    }
+  body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f4f8;
+    color: #1a1a1a;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  header {
+    background: linear-gradient(135deg, #1a73e8, #4285f4);
+    color: white;
+    padding: 80px 20px 60px 20px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+
+  header p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #1558b0;
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #0d47a1;
+    transform: translateY(-2px);
+  }
+
+  section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+
+  section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1a73e8;
+  }
+
+  section p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #333;
+  }
+
+  footer {
+    background-color: #1a73e8;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  footer a {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  @media (max-width: 600px) {
     header h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.1rem;
-      color: #e0e0e0;
+      font-size: 2rem;
     }
 
-    /* ===== NAVIGATION ===== */
-    nav {
-      background-color: #fff;
-      text-align: center;
-      padding: 15px 0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-    nav a {
-      margin: 0 15px;
-      font-weight: 500;
-      font-size: 1rem;
-    }
-
-    /* ===== MAIN ===== */
-    main {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    section {
-      margin-bottom: 60px;
-      padding: 30px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-
-    section h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.8rem;
-      color: #1a73e8;
-      margin-bottom: 15px;
-    }
-
-    section p {
-      font-size: 1rem;
-      margin-bottom: 10px;
-      color: #555;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #666;
-      border-top: 1px solid #eee;
-    }
-
-    /* ===== BUTTON ===== */
     .btn {
-      display: inline-block;
-      padding: 10px 25px;
-      background-color: #1a73e8;
-      color: #fff;
-      border-radius: 5px;
-      font-weight: 500;
-      text-decoration: none;
-      transition: background-color 0.3s;
+      padding: 12px 24px;
     }
-    .btn:hover {
-      background-color: #1558b0;
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media(max-width: 600px){
-      header h1 { font-size: 1.8rem; }
-      section { padding: 20px; }
-      nav a { margin: 0 10px; font-size: 0.95rem; }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
 <header>
   <h1>AppBelieve Studio</h1>
-  <p>Creating clean, functional, and engaging mobile apps.</p>
+  <p>We create apps that inspire and delight users worldwide.</p>
+  <a href="https://play.google.com/store/apps/developer?id=AppBelieve+Studio" class="btn">Our Apps</a>
 </header>
 
-<nav>
-  <a href="#about">About Us</a>
-  <a href="#apps">Our Apps</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<main>
-
-<section id="about">
+<section>
   <h2>About Us</h2>
-  <p>AppBelieve Studio is a mobile app development company focused on delivering high-quality, user-friendly applications. Our mission is to combine creativity and technology to produce apps that delight users and solve real-world problems.</p>
+  <p>AppBelieve Studio is dedicated to developing high-quality mobile applications on Google Play. Our apps focus on providing value, simplicity, and enjoyable experiences for all users.</p>
+  <p>We integrate analytics and ad services responsibly, maintaining transparency and user privacy.</p>
 </section>
 
-<section id="apps">
-  <h2>Our Apps</h2>
-  <p>We specialize in free and monetized apps, utilizing trusted platforms like Google Play. Each app is designed with attention to performance, privacy, and user experience.</p>
-  <p><a href="#" class="btn">View All Apps</a></p>
-</section>
-
-<section id="contact">
+<section>
   <h2>Contact</h2>
-  <p>Have questions or feedback? We'd love to hear from you!</p>
-  <p>Email us at: <a href="mailto:ngthquynhanh@gmail.com">ngthquynhanh@gmail.com</a></p>
-  <p>Visit our website: <a href="https://sites.google.com/view/appbelieve" target="_blank">AppBelieve Studio Website</a></p>
+  <p>If you have any questions, feedback, or inquiries, feel free to reach out to us:</p>
+  <p>Email: <a href="mailto:dev.appbelieve@gmail.com">dev.appbelieve@gmail.com</a></p>
+  <p>Website: <a href="https://appbelieve.github.io/" target="_blank">https://appbelieve.github.io/</a></p>
 </section>
-
-</main>
 
 <footer>
-  &copy; 2025 AppBelieve Studio
+  &copy; 2025 AppBelieve Studio | Made with ❤️ by AppBelieve Team
 </footer>
 
 </body>
