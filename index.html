@@ -15,9 +15,9 @@
 
   body {
     font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    background-color: #f0f4f8;
+    background-color: #f4f5f7;
     color: #1a1a1a;
+    line-height: 1.6;
   }
 
   a {
@@ -25,54 +25,77 @@
     color: inherit;
   }
 
+  /* Header + Menu */
   header {
-    background: linear-gradient(135deg, #1a73e8, #4285f4);
+    background: linear-gradient(135deg, #0d3b66, #1a73e8);
+    padding: 20px 40px;
     color: white;
-    padding: 80px 20px 60px 20px;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+
+  nav a {
+    margin-left: 30px;
+    font-weight: 500;
+    color: white;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #ffd700;
+  }
+
+  /* Hero / Home section */
+  .hero {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 40px 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     text-align: center;
   }
 
-  header h1 {
+  .hero h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 3rem;
-    margin-bottom: 10px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #0d3b66;
   }
 
-  header p {
+  .hero p {
     font-size: 1.2rem;
+    color: #333;
     margin-bottom: 30px;
   }
 
-  .btn {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #1558b0;
-    color: white;
-    font-weight: 600;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-  }
-
-  .btn:hover {
-    background-color: #0d47a1;
-    transform: translateY(-2px);
-  }
-
+  /* Sections */
   section {
     max-width: 900px;
     margin: 50px auto;
     padding: 40px 20px;
     background-color: white;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   }
 
   section h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #1a73e8;
+    color: #0d3b66;
   }
 
   section p {
@@ -82,24 +105,24 @@
   }
 
   footer {
-    background-color: #1a73e8;
+    background-color: #0d3b66;
     color: white;
     text-align: center;
-    padding: 30px 20px;
+    padding: 25px 20px;
+    font-size: 0.9rem;
   }
 
   footer a {
-    color: #fff;
+    color: #ffd700;
     font-weight: 500;
   }
 
-  @media (max-width: 600px) {
-    header h1 {
-      font-size: 2rem;
+  @media (max-width: 768px) {
+    nav a {
+      margin-left: 15px;
     }
-
-    .btn {
-      padding: 12px 24px;
+    .hero h1 {
+      font-size: 2rem;
     }
   }
 </style>
@@ -107,26 +130,36 @@
 <body>
 
 <header>
-  <h1>AppBelieve Studio</h1>
-  <p>We create apps that inspire and delight users worldwide.</p>
-  <a href="https://play.google.com/store/apps/developer?id=AppBelieve+Studio" class="btn">Our Apps</a>
+  <div class="nav-container">
+    <div class="logo">AppBelieve Studio</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="https://play.google.com/store/apps/developer?id=AppBelieve+Studio" target="_blank">Our Apps</a>
+      <a href="https://appbelieve.github.io/privacy.html" target="_blank">Privacy Policy</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<section>
-  <h2>About Us</h2>
-  <p>AppBelieve Studio is dedicated to developing high-quality mobile applications on Google Play. Our apps focus on providing value, simplicity, and enjoyable experiences for all users.</p>
-  <p>We integrate analytics and ad services responsibly, maintaining transparency and user privacy.</p>
+<section id="home" class="hero">
+  <h1>Welcome to AppBelieve Studio</h1>
+  <p>We develop professional mobile applications that are both innovative and reliable. Explore our apps, learn about our mission, and get in touch with us.</p>
 </section>
 
-<section>
+<section id="about">
+  <h2>About Us</h2>
+  <p>AppBelieve Studio focuses on creating high-quality apps on Google Play. Our team emphasizes user experience, privacy, and performance. We use trusted third-party services responsibly to enhance our apps while respecting user data.</p>
+</section>
+
+<section id="contact">
   <h2>Contact</h2>
-  <p>If you have any questions, feedback, or inquiries, feel free to reach out to us:</p>
+  <p>If you have questions, feedback, or business inquiries, you can reach us via:</p>
   <p>Email: <a href="mailto:dev.appbelieve@gmail.com">dev.appbelieve@gmail.com</a></p>
   <p>Website: <a href="https://appbelieve.github.io/" target="_blank">https://appbelieve.github.io/</a></p>
 </section>
 
 <footer>
-  &copy; 2025 AppBelieve Studio | Made with ❤️ by AppBelieve Team
+  &copy; 2025 AppBelieve Studio
 </footer>
 
 </body>
