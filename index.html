@@ -1,115 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AppBelieve Studio</title>
-  <style>
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    /* Fonts & colors */
-    body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #1c1c1c; background: #f4f4f4; }
-    a { text-decoration: none; color: inherit; }
-    button { cursor: pointer; border: none; outline: none; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AppBelieve Studio</title>
+<style>
+    /* Reset & Base */
+    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Arial', sans-serif; }
+    body { line-height:1.6; color:#fff; background-color:#f5f5f5; }
 
     /* Header */
-    header { background: #001f3f; color: #fff; padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
-    header h1 { font-size: 1.8rem; font-weight: 700; }
-    nav a { margin-left: 2rem; font-weight: 500; transition: color 0.3s; }
-    nav a:hover { color: #ffd166; }
+    header {
+        background-color:#003049;
+        padding:20px 40px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+    header h1 { font-size:1.8rem; color:#fff; }
+    nav a {
+        color:#fff;
+        text-decoration:none;
+        margin-left:30px;
+        font-weight:bold;
+        transition:color 0.3s;
+    }
+    nav a:hover { color:#ffb703; }
 
     /* Hero */
-    .hero { 
-      display: flex; flex-direction: column; justify-content: center; align-items: center; 
-      height: 80vh; text-align: center; 
-      background: linear-gradient(135deg, #001f3f, #007f7f);
-      color: #fff; 
-      padding: 2rem;
+    .hero {
+        background: linear-gradient(135deg, #003049 0%, #00798c 100%);
+        text-align:center;
+        padding:100px 20px;
     }
-    .hero h2 { font-size: 3rem; margin-bottom: 1rem; animation: fadeIn 1.2s ease forwards; }
-    .hero p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 700px; animation: fadeIn 1.5s ease forwards; }
-    .hero a { background: #ffd166; color: #001f3f; padding: 0.8rem 2rem; border-radius: 5px; font-weight: 600; transition: transform 0.3s, box-shadow 0.3s; }
-    .hero a:hover { transform: scale(1.05); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+    .hero h2 { font-size:2.5rem; margin-bottom:20px; }
+    .hero p { font-size:1.2rem; margin-bottom:30px; max-width:700px; margin-left:auto; margin-right:auto; }
+    .hero a.cta {
+        display:inline-block;
+        padding:15px 30px;
+        background-color:#ffb703;
+        color:#003049;
+        font-weight:bold;
+        border-radius:6px;
+        text-decoration:none;
+        transition:background 0.3s;
+    }
+    .hero a.cta:hover { background-color:#ffaa00; }
 
     /* Sections */
-    section { padding: 5rem 2rem; text-align: center; }
-    section h3 { font-size: 2rem; margin-bottom: 2rem; color: #001f3f; }
-    .cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
-    .card { background: #fff; border-radius: 10px; padding: 2rem; width: 280px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
-    .card:hover { transform: translateY(-10px); box-shadow: 0 12px 25px rgba(0,0,0,0.2); }
-    .card h4 { margin-bottom: 1rem; color: #007f7f; }
-    .card p { font-size: 0.95rem; color: #333; }
+    .sections {
+        display:flex;
+        justify-content:space-between;
+        max-width:1100px;
+        margin:50px auto;
+        gap:20px;
+        flex-wrap:wrap;
+        padding:0 20px;
+    }
+    .card {
+        flex:1 1 30%;
+        background-color:#005f73;
+        padding:30px 20px;
+        border-radius:10px;
+        min-width:250px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover { transform:translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.2); }
+    .card h3 { margin-bottom:15px; color:#ffb703; font-size:1.5rem; }
+    .card p { font-size:1rem; line-height:1.4; }
+    .card a { display:inline-block; margin-top:15px; color:#ffb703; text-decoration:none; font-weight:bold; }
+    .card a:hover { text-decoration:underline; }
 
     /* Footer */
-    footer { background: #001f3f; color: #fff; padding: 2rem; text-align: center; font-size: 0.9rem; }
-    footer a { color: #ffd166; transition: color 0.3s; }
-    footer a:hover { color: #fff; }
-
-    /* Animations */
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    footer {
+        background-color:#003049;
+        text-align:center;
+        padding:20px;
+        font-size:0.9rem;
+    }
+    footer a { color:#ffb703; text-decoration:none; }
+    footer a:hover { text-decoration:underline; }
 
     /* Responsive */
-    @media(max-width: 768px){ .cards { flex-direction: column; align-items: center; } }
-  </style>
+    @media(max-width:900px) {
+        .sections { flex-direction:column; align-items:center; }
+        .card { width:90%; }
+    }
+</style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
+<header>
     <h1>AppBelieve Studio</h1>
     <nav>
-      <a href="#home">Home</a>
-      <a href="https://appbelieve.github.io/privacy.html" target="_blank">Privacy Policy</a>
+        <a href="#home">Home</a>
+        <a href="https://appbelieve.github.io/privacy.html" target="_blank">Privacy Policy</a>
     </nav>
-  </header>
+</header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
+<section class="hero" id="home">
     <h2>Welcome to AppBelieve Studio</h2>
-    <p>We create high-quality mobile apps for users around the world. Check out our work below and stay updated with our latest releases.</p>
-    <a href="https://play.google.com/store/apps/developer?id=AppBelieve+Studio" target="_blank">Our Apps</a>
-  </section>
+    <p>We create innovative mobile applications designed to enhance your digital experience. Explore our work and enjoy seamless, intuitive apps.</p>
+    <a class="cta" href="https://play.google.com/store/apps/developer?id=AppBelieve+Studio" target="_blank">Our Apps</a>
+</section>
 
-  <!-- About Us -->
-  <section>
-    <h3>About Us</h3>
-    <div class="cards">
-      <div class="card">
-        <h4>Who We Are</h4>
-        <p>AppBelieve Studio is dedicated to building apps that combine functionality, simplicity, and reliability for our users.</p>
-      </div>
+<section class="sections">
+    <div class="card">
+        <h3>About Us</h3>
+        <p>AppBelieve Studio is dedicated to creating high-quality mobile applications. Our focus is on user experience, innovation, and simplicity.</p>
     </div>
-  </section>
-
-  <!-- Our Apps -->
-  <section>
-    <h3>Our Apps</h3>
-    <div class="cards">
-      <div class="card">
-        <h4>Explore All Apps</h4>
-        <p>Discover our apps on Google Play Store. We currently focus on quality over quantity, ensuring each app provides a seamless experience.</p>
+    <div class="card">
+        <h3>Our App</h3>
+        <p>We currently offer our first app on Google Play. Discover its features and enjoy a smooth, user-friendly experience designed to meet your needs.</p>
         <a href="https://play.google.com/store/apps/developer?id=AppBelieve+Studio" target="_blank">View on Google Play</a>
-      </div>
     </div>
-  </section>
-
-  <!-- Contact -->
-  <section>
-    <h3>Contact</h3>
-    <div class="cards">
-      <div class="card">
-        <h4>Email</h4>
-        <p>Get in touch with us for support, inquiries, or collaborations.</p>
+    <div class="card">
+        <h3>Contact</h3>
+        <p>Have questions or feedback? Reach out to us via email and we’ll get back to you promptly.</p>
         <a href="mailto:dev.appbelieve@gmail.com">dev.appbelieve@gmail.com</a>
-      </div>
     </div>
-  </section>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 AppBelieve Studio | <a href="https://appbelieve.github.io/" target="_blank">Developer Website</a>
-  </footer>
+<footer>
+    &copy; 2025 AppBelieve Studio. All Rights Reserved. | <a href="https://appbelieve.github.io/" target="_blank">Visit Our Website</a>
+</footer>
 
 </body>
 </html>
