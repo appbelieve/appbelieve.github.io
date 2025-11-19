@@ -4,82 +4,134 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AppBelieve Studio</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  /* Reset cơ bản */
+  /* Reset */
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family: 'Roboto', sans-serif; background-color: #1a0b3b; color:#e5e7eb; }
+  body { font-family: 'Roboto', sans-serif; background-color: #0B0F29; color:#FFFFFF; }
 
   /* Header */
   header {
-    background-color: #2c1053;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
     padding: 20px 40px;
     display:flex;
     justify-content: space-between;
-    align-items: center;
+    align-items:center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
   }
-  header h1 { font-size: 1.8rem; color:#f472b6; }
-  nav a { color:#e5e7eb; text-decoration:none; margin-left:20px; font-weight:500; transition: color 0.3s; }
-  nav a:hover { color:#f472b6; }
+  header h1 { font-size: 1.8rem; color:#26D4FF; font-weight:700; }
+  nav a {
+    color:#B9C1D9;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:500;
+    transition: 0.3s;
+  }
+  nav a:hover { color:#26D4FF; text-shadow:0 0 8px rgba(38,212,255,0.6); }
 
-  /* Hero Section */
+  /* Hero */
   .hero {
-    background: linear-gradient(135deg, #2c1053, #5b21b6);
+    background: linear-gradient(135deg, #0B0F29 0%, #0A0038 100%);
     text-align:center;
-    padding:100px 20px 60px 20px;
+    padding:110px 20px 80px 20px;
   }
-  .hero h2 { font-size:3rem; margin-bottom:20px; }
-  .hero p { font-size:1.2rem; max-width:700px; margin: 0 auto 30px auto; line-height:1.6; color:#e5e7eb; }
+  .hero h2 {
+    font-size:3rem;
+    margin-bottom:20px;
+    font-weight:700;
+  }
+  .hero p {
+    font-size:1.2rem;
+    max-width:700px;
+    margin: 0 auto 35px auto;
+    line-height:1.7;
+    color:#B9C1D9;
+  }
   .hero a.cta {
-    background-color:#f472b6;
-    color:#1a0b3b;
-    padding:15px 30px;
+    display:inline-block;
+    background: linear-gradient(90deg, #005CFF 0%, #26D4FF 100%);
+    color:#FFFFFF;
+    padding:16px 36px;
     font-weight:700;
     text-decoration:none;
-    border-radius:8px;
-    transition: background-color 0.3s, color 0.3s;
+    border-radius:10px;
+    transition:0.3s;
+    box-shadow:0 0 14px rgba(0,92,255,0.45);
   }
-  .hero a.cta:hover { background-color:#ec4899; color:#fff; }
+  .hero a.cta:hover {
+    filter:brightness(1.12);
+    transform:translateY(-3px);
+  }
 
   /* Cards Section */
   .cards {
     display:flex;
     justify-content:center;
-    gap:30px;
-    flex-wrap: wrap;
-    padding:60px 20px;
+    gap:32px;
+    flex-wrap:wrap;
+    padding:80px 20px;
+    background:#11162E;
   }
   .card {
-    background-color:#3b0e77;
-    padding:30px;
-    border-radius:12px;
-    flex:1 1 250px;
-    max-width:300px;
+    padding:32px;
+    border-radius:16px;
+    flex:1 1 260px;
+    max-width:320px;
     text-align:center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    backdrop-filter: blur(10px);
+    transition: 0.35s;
+    box-shadow: 0 0 0 rgba(0,92,255,0);
   }
   .card:hover {
-    transform: translateY(-8px);
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    transform: translateY(-10px);
+    box-shadow: 0 0 26px rgba(0,92,255,0.35);
   }
-  .card h3 { color:#f472b6; margin-bottom:15px; }
-  .card p { color:#e5e7eb; line-height:1.5; margin-bottom:20px; }
-  .card a { color:#f472b6; font-weight:600; text-decoration:none; transition: color 0.3s; }
-  .card a:hover { color:#ec4899; }
+  .card h3 {
+    color:#26D4FF;
+    margin-bottom:15px;
+    font-size:1.35rem;
+  }
+  .card p {
+    color:#B9C1D9;
+    line-height:1.5;
+    margin-bottom:22px;
+  }
+  .card a {
+    color:#26D4FF;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.3s;
+  }
+  .card a:hover {
+    color:#005CFF;
+    text-shadow:0 0 6px rgba(0,92,255,0.6);
+  }
 
   /* Footer */
   footer {
-    background-color:#2c1053;
+    background:#0B0F29;
     text-align:center;
-    padding:30px 20px;
-    font-size:0.9rem;
-    color:#e5e7eb;
+    padding:35px 20px;
+    font-size:0.92rem;
+    color:#B9C1D9;
+    border-top:1px solid rgba(255,255,255,0.07);
   }
-  footer a { color:#f472b6; text-decoration:none; transition: color 0.3s; }
-  footer a:hover { color:#ec4899; }
-
+  footer a {
+    color:#26D4FF;
+    text-decoration:none;
+    transition:0.3s;
+    font-weight:500;
+  }
+  footer a:hover {
+    color:#005CFF;
+    text-shadow:0 0 6px rgba(0,92,255,0.55);
+  }
 </style>
 </head>
+
 <body>
 
 <header>
