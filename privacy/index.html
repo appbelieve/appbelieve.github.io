@@ -50,7 +50,23 @@
 <h2>2. Personal Data We Collect</h2>
 <p>We collect limited types of information to ensure our apps work properly, display relevant ads, and help us understand how users interact with our products. We do not collect or store any personally identifiable or sensitive data such as passwords, precise location, contacts, or financial information.</p>
 
-<h3>2.1. Data Collected Automatically</h3>
+<h3>2.1. In-App Purchases (IAP)</h3>
+<p>Some of our apps offer optional in-app purchases (IAP) such as premium features, ad removal, or content packs.</p>
+<p>When you make a purchase:</p>
+<ul>
+<li>Transactions are processed securely through <strong>Google Play Billing</strong>.</li>
+<li>We <strong>do not collect or store any payment information</strong> such as credit card numbers or Google account credentials.</li>
+<li>We only receive a non-personal purchase confirmation (e.g., purchase token, product ID).</li>
+</ul>
+<p>This information is used solely to:</p>
+<ul>
+<li>activate purchased features,</li>
+<li>restore purchases when reinstalling the app,</li>
+<li>verify refunds if required.</li>
+</ul>
+<p>All IAP processing is fully compliant with Google Play Billing, GDPR, and global privacy regulations.</p>
+    
+<h3>2.2. Data Collected Automatically</h3>
 <p>When you use our apps, certain data may be collected automatically through third-party services such as Firebase, Google Analytics 4 (GA4), Google AdMob, and Google Ads. This may include:</p>
 <ul>
 <li>Device information (model, OS version, language, country)</li>
@@ -69,7 +85,7 @@
 <li>Deliver non-personalized or personalized ads (depending on user consent and device settings)</li>
 </ul>
 
-<h3>2.2. Data You Provide Voluntarily</h3>
+<h3>2.3. Data You Provide Voluntarily</h3>
 <p>If you contact us (for example, via email or feedback form), we may collect the information you choose to provide, such as:</p>
 <ul>
 <li>Name (if included)</li>
@@ -78,7 +94,7 @@
 </ul>
 <p>We use this data only for responding to your inquiry or providing technical support.</p>
 
-<h3>2.3. Third-Party SDKs and Services</h3>
+<h3>2.4. Third-Party SDKs and Services</h3>
 <p>Our apps may use third-party SDKs that process limited technical data in accordance with their own privacy policies, including:</p>
 <ul>
 <li>Firebase (analytics, crash reporting): <a href="https://firebase.google.com/support/privacy" target="_blank">https://firebase.google.com/support/privacy</a></li>
@@ -189,16 +205,34 @@
 <h2>7. App Permissions</h2>
 <p>Our app may request certain device permissions to enable its core features and support advertising or analytics services. These permissions are used only for their intended technical purposes. We do not use them to collect personal information or access your private content.</p>
 
-<p>Specifically, the app may request:</p>
+<p>Specifically, the app may request the following permissions:</p>
+
 <ul>
-<li>Internet and Network Access (INTERNET, ACCESS_NETWORK_STATE): required to load online content, display ads, and send anonymous analytics data through Google services.</li>
-<li>Advertising Identifiers (com.google.android.gms.permission.AD_ID, ACCESS_ADSERVICES_AD_ID, ACCESS_ADSERVICES_ATTRIBUTION, ACCESS_ADSERVICES_TOPICS): used by Google Ads and AdMob to deliver and measure personalized or contextual advertising.</li>
-<li>Billing Permission (com.android.vending.BILLING): enables secure in-app purchases or subscriptions via Google Play.</li>
-<li>Wallpaper Access (SET_WALLPAPER): allows the app to set images as device wallpapers at the user’s request.</li>
-<li>Storage Access (READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE): allows reading and saving wallpaper images for display only. The app does not access personal photos or files.</li>
-<li>Notifications (POST_NOTIFICATIONS): optional permission that lets the app send notifications such as updates or reminders, only if the user grants consent.</li>
-<li>Foreground and Wake Permissions (FOREGROUND_SERVICE, WAKE_LOCK): ensure that wallpaper or background processes can run smoothly without interruption.</li>
-<li>Install Referrer Service (BIND_GET_INSTALL_REFERRER_SERVICE): used by Google Play to measure installs and app performance metrics.</li>
+    <li><strong>Internet and Network Access</strong> (INTERNET, ACCESS_NETWORK_STATE):  
+    required to load online content, display ads, and send anonymous analytics data through Google services.</li>
+
+    <li><strong>Advertising Identifiers</strong>  
+    (com.google.android.gms.permission.AD_ID, ACCESS_ADSERVICES_AD_ID, ACCESS_ADSERVICES_ATTRIBUTION, ACCESS_ADSERVICES_TOPICS):  
+    used by Google Ads and AdMob to deliver and measure personalized or contextual advertising.</li>
+
+    <li><strong>Billing Permission</strong> (com.android.vending.BILLING):  
+    enables secure in-app purchases (IAP) through Google Play.</li>
+
+    <li><strong>Wallpaper Access</strong> (SET_WALLPAPER):  
+    allows the app to set images as device wallpapers when requested by the user.</li>
+
+    <li><strong>Write to External Storage</strong> (WRITE_EXTERNAL_STORAGE):  
+    <em>Used only on older Android versions (Android 9 or earlier)</em> to save wallpapers or downloaded images.  
+    Newer Android versions use Scoped Storage and do not require this permission.</li>
+
+    <li><strong>Notifications</strong> (POST_NOTIFICATIONS):  
+    optional permission allowing the app to send notifications if granted by the user.</li>
+
+    <li><strong>Foreground Service & Wake Permissions</strong> (FOREGROUND_SERVICE, WAKE_LOCK):  
+    ensure wallpaper setting, downloads, or background tasks run smoothly without interruption.</li>
+
+    <li><strong>Install Referrer Service</strong> (BIND_GET_INSTALL_REFERRER_SERVICE):  
+    used by Google Play to measure installs and attribution performance.</li>
 </ul>
 
 <p><strong>Storage and Media Access Clarification:</strong> When granted, the storage permission (READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE) may technically allow access to media files such as photos or videos stored on your device. However, our app only reads image files selected or displayed as wallpapers and does not access, scan, upload, or store any other personal media content such as your personal photos, videos, or audio recordings. No media data is ever transmitted off your device. All access remains local and limited strictly to the wallpaper functionality requested by the user.</p>
